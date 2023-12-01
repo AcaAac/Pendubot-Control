@@ -39,7 +39,7 @@ f34 = M\(-Vmda-G);
 f3 = f34(1);
 f4 = f34(2);
 
-g34 = mldivide(M, [k; 0]);
+g34 = M\([k; 0]);
 g3 = g34(1);
 g4 = g34(2);
 
@@ -53,16 +53,27 @@ A = jacobian(f, x_notice) + jacobian(g, x_notice)*t;
 B = g;
 
 % Set the equilibrium point
-x_e = [4*pi/5; pi; 0; 0];
-t_e = 10; % change
+x_e = [alpha1r; pi; 0; 0];
+t_e = sin(x_e(1))*p4;
 
 % Substitute the equilibrium point into the matrices A, B, and C
 A_e = double(subs(A, {a1, a2, da1, da2, t}, {x_e(1), x_e(2), x_e(3), x_e(4), t_e}));
 B_e = double(subs(B, {a1, a2, da1, da2, t}, {x_e(1), x_e(2), x_e(3), x_e(4), t_e}));
 
+% Construct the linear state-space representation
+sys = ss(A_e, B_e, eye(4), 0);
+
+% Discretize
+% Specify the time step for discretization
+dt = 0.004; % You can adjust this value as needed
+
+% Discretize the system using c2d
+sys_d = c2d(sys, dt, 'zoh');
+
 % Control Law
 Q = [1, 0, 0, 0; 0, 1, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1];
 R = 1;
-K = lqr(A_e, B_e, Q, R);
-corr_x_measured = [x(1)+pi; x(2)+pi; x(3); x(4)];
+K = dlqr(sys_d.A, sys_d.B, Q, R);
+corr_x_measured = [x(1); x(2); x(3); x(4)];
+
 u=-K*corr_x_measured;
