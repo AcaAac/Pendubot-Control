@@ -38,8 +38,8 @@ A = jacobian(f, x_notice) + jacobian(g, x_notice)*t;
 B = g;
 
 % Set the equilibrium point AROUND WHICH WE LINEARIZED
-x_e = [0;0;0;0]; %[4*pi/5; pi; 0; 0];
-t_e = 0; %sin(x_e(1))*p4*grav;
+x_e = [4*pi/5; pi; 0; 0]; %[4*pi/5; pi; 0; 0];
+t_e = sin(x_e(1))*p4*grav; %sin(x_e(1))*p4*grav;
 
 % Substitute the equilibrium point into the matrices A, B, and C
 A_e = double(subs(A, {a1, a2, da1, da2, t}, {x_e(1), x_e(2), x_e(3), x_e(4), t_e}));
