@@ -71,8 +71,8 @@ dt = 0.004; % You can adjust this value as needed
 sys_d = c2d(sys, dt, 'zoh');
 
 % Control Law
-Q = [100,0,0,0 ; 0, 10000,0,0;0,0,1,0;0,0,0,1];
-R = 0.1;
+Q = [1000,-500,0,0 ; -500, 10000,0,0;0,0,1,-100;0,0,-100,1];
+R = 1;
 K = dlqr(sys_d.A, sys_d.B, Q, R);
 corr_x_measured = [x(1); x(2); x(3); x(4)];
 % display(K)

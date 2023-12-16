@@ -76,4 +76,5 @@ R = 1;
 K = dlqr(sys_d.A, sys_d.B, Q, R);
 corr_x_measured = [x(1); x(2); x(3); x(4)];
 % display(K)
-u=-K*corr_x_measured;
+
+u=-K*corr_x_measured ;
