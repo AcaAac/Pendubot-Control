@@ -71,10 +71,11 @@ dt = 0.004; % You can adjust this value as needed
 sys_d = c2d(sys, dt, 'zoh');
 
 % Control Law
-Q = [1, 0, 0, 0; 0, 1, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1];
+Q = eye(4);
 R = 1;
 K = dlqr(sys_d.A, sys_d.B, Q, R);
+% K = lqi(sys_d, Q, R, 0);
 corr_x_measured = [x(1); x(2); x(3); x(4)];
 % display(K)
 
-u=-K*corr_x_measured ;
+u=-K*corr_x_measured;
