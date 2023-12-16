@@ -1167,8 +1167,8 @@ White Noise</P>
 __MWOPC_PART_BEGIN__ /simulink/modelDictionary.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2023a_20220628">
-  <System type="System" uuid="194954b5-fe88-4a3e-a503-166ab912f34f">
-    <Interface type="Interface" uuid="df664c2e-2804-423f-8e96-de87a0b93184"/>
+  <System type="System" uuid="22828407-85d8-4cad-8bea-b77c3fdf0007">
+    <Interface type="Interface" uuid="0236eb81-346d-40ce-a793-86de35b464cf"/>
   </System>
 </MF0>
 __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
@@ -1570,7 +1570,7 @@ Functions/MATLAB Function</P>
     <PortCounts in="1" out="1"/>
     <P Name="Position">[155, 70, 215, 100]</P>
     <P Name="ZOrder">-4</P>
-    <P Name="MATLABFcn">pendubot_reg(u(1),[u(2),u(3),u(4),u(5)])</P>
+    <P Name="MATLABFcn">pendubot_catch(u(1),[u(2),u(3),u(4),u(5)])</P>
   </Block>
   <Block BlockType="Outport" Name="u" SID="6">
     <P Name="Position">[265, 78, 295, 92]</P>
@@ -2574,7 +2574,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_7.xml
   </Block>
   <Block BlockType="MATLABFcn" Name="State equations" SID="60">
     <PortCounts in="1" out="1"/>
-    <P Name="Position">[380, 140, 440, 170]</P>
+    <P Name="Position">[385, 140, 445, 170]</P>
     <P Name="ZOrder">-12</P>
     <P Name="MATLABFcn">pendubot_eqt(u(1),[u(2);u(3);u(4);u(5)])</P>
     <P Name="OutputDimensions">4</P>
@@ -4213,21 +4213,21 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="IsActive" Class="logical">0</P>
           <P Name="IsTabbed" Class="logical">0</P>
           <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
-          <P Name="LoadSaveID" Class="char">15</P>
-          <P Name="Extents" Class="double">[1875.0, 741.0]</P>
-          <P Name="ZoomFactor" Class="double">1.0</P>
-          <P Name="Offset" Class="double">[-529.59999999999991, -216.89999999999998]</P>
-          <P Name="SceneRectInView" Class="double">[-529.59999999999991, -216.89999999999998, 1500.0, 592.8]</P>
-        </Object>
-        <Object ObjectID="8">
-          <P Name="IsActive" Class="logical">0</P>
-          <P Name="IsTabbed" Class="logical">0</P>
-          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
           <P Name="LoadSaveID" Class="char">7</P>
           <P Name="Extents" Class="double">[1875.0, 741.0]</P>
           <P Name="ZoomFactor" Class="double">1.0</P>
           <P Name="Offset" Class="double">[-309.39999999999992, -135.39999999999998]</P>
           <P Name="SceneRectInView" Class="double">[-309.39999999999992, -135.39999999999998, 1500.0, 592.8]</P>
+        </Object>
+        <Object ObjectID="8">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">15</P>
+          <P Name="Extents" Class="double">[1875.0, 741.0]</P>
+          <P Name="ZoomFactor" Class="double">1.0</P>
+          <P Name="Offset" Class="double">[-529.59999999999991, -216.89999999999998]</P>
+          <P Name="SceneRectInView" Class="double">[-529.59999999999991, -216.89999999999998, 1500.0, 592.8]</P>
         </Object>
         <Object ObjectID="9">
           <P Name="IsActive" Class="logical">0</P>
@@ -4322,18 +4322,6 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
       </Array>
       <Array PropName="DockComponentsInfo" Type="Simulink.DockComponentInfo" Dimension="1*2">
         <Object ObjectID="18">
-          <P Name="Type" Class="char">GLUE2:PropertyInspector</P>
-          <P Name="ID" Class="char">Property Inspector</P>
-          <P Name="Visible" Class="logical">0</P>
-          <P Name="CreateCallback" Class="char"/>
-          <P Name="UserData" Class="char"/>
-          <P Name="Floating" Class="logical">0</P>
-          <P Name="DockPosition" Class="char">Right</P>
-          <P Name="Width" Class="int32">512</P>
-          <P Name="Height" Class="int32">384</P>
-          <P Name="Minimized" Class="char">Unset</P>
-        </Object>
-        <Object ObjectID="19">
           <P Name="Type" Class="char">Simulink:Editor:ReferencedFiles</P>
           <P Name="ID" Class="char">Referenced Files</P>
           <P Name="Visible" Class="logical">0</P>
@@ -4342,6 +4330,18 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
 </P>
           <P Name="Floating" Class="logical">0</P>
           <P Name="DockPosition" Class="char">Left</P>
+          <P Name="Width" Class="int32">512</P>
+          <P Name="Height" Class="int32">384</P>
+          <P Name="Minimized" Class="char">Unset</P>
+        </Object>
+        <Object ObjectID="19">
+          <P Name="Type" Class="char">GLUE2:PropertyInspector</P>
+          <P Name="ID" Class="char">Property Inspector</P>
+          <P Name="Visible" Class="logical">0</P>
+          <P Name="CreateCallback" Class="char"/>
+          <P Name="UserData" Class="char"/>
+          <P Name="Floating" Class="logical">0</P>
+          <P Name="DockPosition" Class="char">Right</P>
           <P Name="Width" Class="int32">512</P>
           <P Name="Height" Class="int32">384</P>
           <P Name="Minimized" Class="char">Unset</P>

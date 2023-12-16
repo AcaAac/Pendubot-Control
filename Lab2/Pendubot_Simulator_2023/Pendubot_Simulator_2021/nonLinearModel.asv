@@ -1,0 +1,42 @@
+syms a1 a2 da1 da2 a1_est a2_est
+
+% Define Constants
+p1 = 0.0148;
+p2 = 0.0051;
+p3 = 0.0046;
+p4 = 0.1003;
+p5 = 0.0303;
+grav  = 9.81;
+k = 3.9621/8;
+
+% Dynamic Matrices
+
+M  = [p1+p2+p3*cos(a2), p2+p3*cos(a2); p2+p3*cos(a2), p2];
+Vmda = p3*sin(a2) * [-da2 , -da1 - da2 ; -da1 , 0];
+G  = [p4*grav*cos(a1) + p5 * grav * cos(a1 + a2); p5*grav*cos(a2 + a1)];
+
+% Energy Data
+
+U = p4 * sin(a1) + p5 * sin(a1 + a2);
+
+K = 0.5 * [da1 da2] * M * [da1 ; da2];
+
+E = K + U;
+
+E_TOP = (p4 + p5) * g;
+
+E_est = E - E_TOP;
+
+% Lyapunov Data
+
+KE = 0.5;
+KD = 0.5;
+KP = 0.5;
+KL = 0.5;
+
+
+a1_est = a1 - pi/2;
+a2_est = a1 + a2 - pi/2;
+
+V = KE/2 * E_est^2 + KD/2 * da1^2 + KP/2 * a1_est + KL/2 * a 
+
