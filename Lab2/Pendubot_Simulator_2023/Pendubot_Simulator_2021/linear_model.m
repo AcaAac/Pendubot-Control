@@ -64,8 +64,8 @@ disp(sys_d.A);
 disp(sys_d.B);
 
 % Control Law
-Q = [10, 0, 0, 0; 0, 10, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1];
-R = 1;
+Q = [1, 0, 0, 0; 0, 10, 0, 0; 0, 0, 0.1, 0; 0, 0, 0, 1];
+R = 0.5;
 K = dlqr(sys_d.A, sys_d.B, Q, R);
 
 % Displaying
