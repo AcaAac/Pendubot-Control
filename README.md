@@ -25,7 +25,7 @@ To set up the environment for Lab 1, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/AcaAac/AdvancedControl-EPL
+git clone https://github.com/AcaAac/AdvancedControl-EPL.git
 
 # Navigate to the MagLev lab directory
 cd AdvancedControl-EPL/Lab1
@@ -50,7 +50,7 @@ To set up the environment for Lab 1, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/AcaAac/AdvancedControl-EPL
+git clone https://github.com/AcaAac/AdvancedControl-EPL.git
 
 # Navigate to the MagLev lab directory
 cd AdvancedControl-EPL/Lab2
