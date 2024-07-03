@@ -6,15 +6,11 @@ This repository contains two lab assignments for the Advanced Control course. Ea
 
 - [Lab 1: MagLev Control](#lab-1-maglev-control)
   - [Description](#description)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contents](#contents)
   - [Report](#report1)
 - [Lab 2: Pendubot Control](#lab-2-pendubot-control)
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Contents](#contents)
   - [Report](#report2)
 - [Contributing](#contributing)
 - [License](#license)
@@ -24,7 +20,7 @@ This repository contains two lab assignments for the Advanced Control course. Ea
 
 ### Description
 
-This lab focuses on controlling a Magnetic Levitation (MagLev) system using P, PI, PID, and IFT PID controllers. The lab folder contains the problem sheet, the submitted code, and the detailed report.
+This lab focuses on controlling a Magnetic Levitation (MagLev) system using P, PI, PID, and IFT PID controllers. The lab folder contains the problem sheet, the data taken from the lab computers and a robust control approach.
 
 ### Installation
 
@@ -32,13 +28,48 @@ To set up the environment for Lab 1, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/username/AdvancedControl.git
+git clone https://github.com/AcaAac/AdvancedControl-EPL
 
 # Navigate to the MagLev lab directory
-cd AdvancedControl/Lab_1_MagLev
+cd AdvancedControl-EPL/Lab1
+```
 
-# Unzip the submitted code
-unzip 96138_105545.zip
+### Report
+```bash
 
-# Install necessary dependencies (if any)
-# Example: pip install -r requirements.txt
+# Main report resides at
+cd AdvancedControl-EPL/Lab1/LINMA2671_labo_MAGLEV-VF.pdf
+```
+
+## Lab 2: Pendubot Control
+
+### Description
+
+This lab focuses on controlling a Pendubot using both linear and nonlinear controllers. The lab folder contains the problem sheet, the submitted code, and the comprehensive report.
+
+### Installation
+
+To set up the environment for Lab 1, follow these steps:
+
+```bash
+# Clone the repository
+git clone https://github.com/AcaAac/AdvancedControl-EPL
+
+# Navigate to the MagLev lab directory
+cd AdvancedControl-EPL/Lab2
+```
+
+### Usage
+
+Code is split into National Instruments section, which was ran via the lab computers for the real system (https://www.ni.com/en.html) and the simulated MATLAB code at
+```bash
+cd AdvancedControl-EPL/Lab2/Pendubot_Simulator
+```
+Through this code you can run the simulated controllers via simulink.
+
+### Report
+```bash
+
+# Main report resides at
+cd AdvancedControl-EPL/Lab2/LINMA2671_labo_PENDUBOT-4.pdf
+```
