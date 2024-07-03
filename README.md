@@ -12,9 +12,6 @@ This repository contains two lab assignments for the Advanced Control course. Ea
   - [Installation](#installation)
   - [Usage](#usage)
   - [Report](#report2)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact Information](#contact-information)
 
 ## Lab 1: MagLev Control
 
