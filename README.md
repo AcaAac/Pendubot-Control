@@ -41,7 +41,7 @@ In this lab, three different controllers were designed to control the MagLev sys
    This method allows for an unbiased estimate of the gradient of the cost function, based purely on signal information and experimental feedback. The controller parameters are updated iteratively using the gradient and a stochastic approximation algorithm until an optimal set of parameters is found.
 
 ## Lab 2: Pendubot Control
-![Pendubot](Pendubot.jpg)
+![Pendubot](Pendubot.JPG)
 
 ### Description
 
