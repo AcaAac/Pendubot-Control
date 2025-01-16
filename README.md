@@ -28,9 +28,7 @@ In this lab, three different controllers were designed to control the MagLev sys
 
    The cost function is defined as:
 
-   $
-   J(\rho) = \frac{1}{2N} + \left[\sum L_y \tilde{y}_t(\rho)^2 + \lambda \sum L_u u_t(\rho)^2\right]
-   $
+   ![Cost Function](Lab1/cost_function.png)
 
    where:
    - $\rho$ is the vector of controller parameters to be optimized.
@@ -47,3 +45,38 @@ In this lab, three different controllers were designed to control the MagLev sys
 ### Description
 
 This lab focuses on controlling a Pendubot using both linear and nonlinear controllers. The lab folder includes the problem sheet, the submitted report, and the comprehensive details on the system's behavior and the implemented control techniques.
+
+### Controller Design
+
+The lab consisted of designing two main controllers and an advanced controller:
+
+1. **Controller C1: LQR Controller (Fast)**  
+   The first controller, designed as a Linear Quadratic Regulator (LQR), was tasked with achieving fast response characteristics. It was tuned to provide maximum overshoot of **20%** or less, with low static error and a short settling time. The objective was to have the controller respond quickly to step inputs while maintaining the specified limits for overshoot and error.
+
+2. **Controller C2: LQI Controller (Slower)**  
+   The second controller, an **LQI** (Linear Quadratic Integral) controller, was designed to have slower but reasonable tracking performance. It focused on:
+   - **Maximum overshoot** of **10%** or less.
+   - **Zero static error**, which was achieved by incorporating an integrator.
+   - Minimizing actuator energy consumption by limiting or penalizing the input.  
+   The settling time was kept reasonably short, but there were no specific limits imposed on it.
+
+Both controllers were designed to stabilize the Pendubot in an **UP-UP** configuration, which was a pre-determined configuration of the system.
+
+3. **Advanced Controller: Swing-Up and Catch**  
+   The third advanced controller was designed to perform a **swing-up and catch** maneuver. The goal was to transition the Pendubot from a **DOWN-DOWN** position to the **UP-UP** position.
+
+   - **Swing-Up Controller**:  
+     The swing-up controller was based on a **Lyapunov function**. This function was used to derive control laws that would swing the Pendubot from a downward position to an upright one.  
+     ![Lyapunov Law Image](Lab2/Lyapunov.png)  
+   
+   - **Catch Controller**:  
+     The catch controller was split into two parts:  
+     1. **LQR Controller (same as C1)**: The LQR controller was used to stabilize the Pendubot in the **UP-UP** position.
+     2. **Switch Condition**: A fine-tuned switch condition was added to catch the difference between the **swing-up** phase and the **catching** phase. The switch condition triggered the LQR controller once the Pendubot reached the upright position.  
+     ![Catch Condition Image](Lab2/threshold.png)  
+
+The swing-up and catch controllers were designed to ensure smooth transitions and stabilization, using a combination of LQR, Lyapunov theory, and switching conditions for precise control.
+
+---
+
+The report for this lab and the problem sheet can be found in the respective lab folder.
