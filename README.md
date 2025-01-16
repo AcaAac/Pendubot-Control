@@ -28,9 +28,9 @@ In this lab, three different controllers were designed to control the MagLev sys
 
    The cost function is defined as:
 
-   $$
+   $
    J(\rho) = \frac{1}{2N} + \left[\sum L_y \tilde{y}_t(\rho)^2 + \lambda \sum L_u u_t(\rho)^2\right]
-   $$
+   $
 
    where:
    - $\rho$ is the vector of controller parameters to be optimized.
